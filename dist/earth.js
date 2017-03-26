@@ -77,9 +77,9 @@ var OD_PAIRS = [
         countryList = document.getElementById("countries");
 
     queue()
-        .defer(d3.json, "../data/world-110m.json")
-        .defer(d3.tsv, "../data/world-110m-country-names.tsv")
-        .defer(d3.json, "../data/airports.topo.json")
+        .defer(d3.json, "data/world-110m.json")
+        .defer(d3.tsv, "data/world-110m-country-names.tsv")
+        .defer(d3.json, "data/airports.topo.json")
         .await(ready);
 
     //Main function
