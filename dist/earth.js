@@ -286,7 +286,7 @@ var OD_PAIRS = [
             });
         }
 
-//       spinning_globe();
+       spinning_globe();
 
         svg.append("g")
            .attr("class", "airports")
