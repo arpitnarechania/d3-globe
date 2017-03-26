@@ -1,0 +1,42 @@
+    .water {
+    fill: #3498db;
+    }
+
+    .land {
+    stroke: #FFF;
+    stroke-width: 0.7px;
+    }
+
+    .land:hover {
+    fill:#2ecc71;
+    stroke-width: 1px;
+    }
+
+    .focused {
+    fill: #33CC33;
+    }
+
+    .countryTooltip {
+    position: absolute;
+    display: none;
+    pointer-events: none;
+    background: #fff;
+    padding: 5px;
+    text-align: left;
+    border: solid #ccc 1px;
+    color: #666;
+    font-size: 14px;
+    font-family: sans-serif;
+    }
+
+    .route{
+    fill:none;
+    stroke:red;
+    stroke-width:0px;
+
+    }
+
+    .plane {
+      fill: #fff;
+      stroke-width: 0;
+    }

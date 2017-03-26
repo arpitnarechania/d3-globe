@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Earth globe</title>
+
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <script src="node_modules/d3/d3.min.js"></script>
+
+    <link rel="stylesheet" href="dist/earth.css"/>
+
+</head>
+<body>
+
+<select id="countries"></select>
+<select id="projections"></select>
+<input type="button" class="btn btn-sm btn-default fa" id='render' onclick="render()" title="refresh" value="&#xf021;">
+
+<div id="earth"></div>
+
+</body>
+
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="data/cities_data.js"></script>
+<script src="data/earthquake_data.js"></script>
+<script src="dist/earth.js"></script>
+
+<script>
+
+    var projectionData = ["orthographic","azimuthalEqualArea","azimuthalEquidistant","conicEqualArea","conicConformal","conicEquidistant","equirectangular","gnomonic","stereographic","mercator","transverseMercator"];
+    var projectionList = document.getElementById("projections");
+    var earthInstance;
+
+    //Adding projections to select
+    projectionData.forEach(function(d) {
+        var option =  document.createElement("option");
+        option.text = d;
+        option.value = d;
+        projectionList.add(option);
+    });
+
+    function render(){
+        $("#earth").empty();
+        earthInstance = Earth($("#projections").val());
+    }
+
+    render();
+
+</script>
+
+</html>
